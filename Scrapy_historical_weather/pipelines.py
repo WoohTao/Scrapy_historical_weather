@@ -10,7 +10,6 @@ from Scrapy_historical_weather.mysql_db import MyMySQLdb
 
 class ScrapyHistoricalWeatherPipeline(object):
     def process_item(self, item, spider):
-        # TODO check data
         try:
             insert_weather = MyMySQLdb()
             insert_weather.insert_item(item)
