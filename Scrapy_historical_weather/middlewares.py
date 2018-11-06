@@ -108,6 +108,7 @@ class ScrapyHistoricalWeatherDownloaderMiddleware(object):
 
 # 随机更改UserAgent
 class MyUserAgentMiddleware(UserAgentMiddleware):
+
     def __init__(self, user_agent=''):
         self.user_agent = user_agent
 
@@ -115,4 +116,3 @@ class MyUserAgentMiddleware(UserAgentMiddleware):
         my_user_agent = random.choice(UserAgentList)
         request.headers.setdefault('User-Agent', my_user_agent)
         # logging.log(logging.INFO, 'User-Agent: %s', my_user_agent)
-
